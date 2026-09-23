@@ -1,0 +1,19 @@
+<h1>Inicio de sesion</h1>
+
+<label>Nombre de usuario:</label>
+<input type="text" #usuario>
+
+<br><br>
+
+<label>Contraseña:</label>
+<input type="password" #contrasenia>
+
+<br><br>
+
+<button (click)="validarUsuario(usuario.value, contrasenia.value)">
+    Iniciar sesion
+</button>
+
+<br><br>
+
+<p>{{ mensaje }}</p>

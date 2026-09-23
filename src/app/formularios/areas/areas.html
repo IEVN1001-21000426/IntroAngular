@@ -1,0 +1,89 @@
+<h1>Calculadora de Areas</h1>
+
+<label>Selecciona una figura:</label>
+
+<select #figura (change)="figuraArea = figura.value">
+    <option value="">-- Selecciona --</option>
+    <option value="rectangulo">Rectangulo</option>
+    <option value="circulo">Circulo</option>
+    <option value="triangulo">Triangulo</option>
+    <option value="pentagono">Pentagono</option>
+</select>
+
+<hr>
+
+
+@if (figuraArea === 'rectangulo') {
+
+    <h2>Rectangulo</h2>
+
+    <label>Base:</label>
+    <input type="number" #baseRectangulo>
+
+    <label>Altura:</label>
+    <input type="number" #alturaRectangulo>
+
+    <button (click)="calcularRectangulo(
+        +baseRectangulo.value,
+        +alturaRectangulo.value)">
+        Calcular area
+    </button>
+
+    <p>Area: {{ areaRectangulo }}</p>
+}
+
+
+
+@if (figuraArea === 'circulo') {
+
+    <h2>Circulo</h2>
+
+    <label>Radio:</label>
+    <input type="number" #radioCirculo>
+
+    <button (click)="calcularCirculo(+radioCirculo.value)">
+        Calcular area
+    </button>
+
+    <p>Area: {{ areaCirculo }}</p>
+}
+
+
+@if (figuraArea === 'triangulo') {
+
+    <h2>Triangulo</h2>
+
+    <label>Base:</label>
+    <input type="number" #baseTriangulo>
+
+    <label>Altura:</label>
+    <input type="number" #alturaTriangulo>
+
+    <button (click)="calcularTriangulo(
+        +baseTriangulo.value,
+        +alturaTriangulo.value)">
+        Calcular area
+    </button>
+
+    <p>Area: {{ areaTriangulo }}</p>
+}
+
+
+@if (figuraArea === 'pentagono') {
+
+    <h2>Pentagono</h2>
+
+    <label>Perimetro:</label>
+    <input type="number" #perimetroPentagono>
+
+    <label>Apotema:</label>
+    <input type="number" #apotemaPentagono>
+
+    <button (click)="calcularPentagono(
+        +perimetroPentagono.value,
+        +apotemaPentagono.value)">
+        Calcular area
+    </button>
+
+    <p>Area: {{ areaPentagono }}</p>
+}
