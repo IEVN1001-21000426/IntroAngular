@@ -1,0 +1,148 @@
+<h2>Distancia entre dos puntos</h2>
+
+<div>
+
+    
+    <h3>Punto 1</h3>
+
+    <label>Coordenada X1:</label>
+    <input
+        type="number"
+        [(ngModel)]="x1"
+    >
+
+    <br><br>
+
+    <label>Coordenada Y1:</label>
+    <input
+        type="number"
+        [(ngModel)]="y1"
+    >
+
+
+    
+    <h3>Punto 2</h3>
+
+    <label>Coordenada X2:</label>
+    <input
+        type="number"
+        [(ngModel)]="x2"
+    >
+
+    <br><br>
+
+    <label>Coordenada Y2:</label>
+    <input
+        type="number"
+        [(ngModel)]="y2"
+    >
+
+    <br><br>
+
+    
+    <button (click)="calcularDistancia()">
+        Calcular distancia
+    </button>
+
+</div>
+
+
+<hr>
+
+
+
+<h3>Resultado</h3>
+
+<p>
+    Punto 1: ({{ x1 }}, {{ y1 }})
+</p>
+
+<p>
+    Punto 2: ({{ x2 }}, {{ y2 }})
+</p>
+
+<p>
+    Distancia: {{ distancia }}
+</p>
+
+
+<hr>
+
+
+<h3>Gráfica</h3>
+
+<svg
+    width="400"
+    height="400"
+    style="border: 1px solid black; background-color: white;"
+>
+
+    <line
+        x1="0"
+        y1="200"
+        x2="400"
+        y2="200"
+        stroke="black"
+        stroke-width="2"
+    >
+    </line>
+
+
+    <line
+        x1="200"
+        y1="0"
+        x2="200"
+        y2="400"
+        stroke="black"
+        stroke-width="2"
+    >
+    </line>
+
+
+    <line
+        [attr.x1]="graficaX(x1)"
+        [attr.y1]="graficaY(y1)"
+        [attr.x2]="graficaX(x2)"
+        [attr.y2]="graficaY(y2)"
+        stroke="blue"
+        stroke-width="3"
+    >
+    </line>
+
+
+    <circle
+        [attr.cx]="graficaX(x1)"
+        [attr.cy]="graficaY(y1)"
+        r="6"
+        fill="red"
+    >
+    </circle>
+
+
+    <circle
+        [attr.cx]="graficaX(x2)"
+        [attr.cy]="graficaY(y2)"
+        r="6"
+        fill="green"
+    >
+    </circle>
+
+
+    <text
+        [attr.x]="graficaX(x1) + 10"
+        [attr.y]="graficaY(y1) - 10"
+        fill="red"
+    >
+        ({{ x1 }}, {{ y1 }})
+    </text>
+
+
+    <text
+        [attr.x]="graficaX(x2) + 10"
+        [attr.y]="graficaY(y2) - 10"
+        fill="green"
+    >
+        ({{ x2 }}, {{ y2 }})
+    </text>
+
+</svg>
