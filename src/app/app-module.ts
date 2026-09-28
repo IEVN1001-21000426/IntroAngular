@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { HeroesList } from './heroes/heroes-list/heroes-list';
-import { Areas } from './formularios/areas/areas';
-import { Usuarios } from './formularios/usuarios/usuarios';
+import { Areas } from './3_ejercicios/areas/areas';
+import { Usuarios } from './3_ejercicios/usuarios/usuarios';
+import { Palindromos } from './3_ejercicios/palindromos/palindromos';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [App, HeroesList, Areas, Usuarios],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [App, HeroesList, Areas, Usuarios, Palindromos],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })

@@ -1,0 +1,43 @@
+<h2>Analizador de Palíndromos</h2>
+
+<div>
+    <label>Escribe una frase:</label>
+
+    <input
+        type="text"
+        [(ngModel)]="frase"
+        placeholder="Ejemplo: Anita lava la tina"
+    >
+
+    <button (click)="analizar()">
+        Analizar
+    </button>
+</div>
+
+<hr>
+
+<h3>Resultados</h3>
+
+<p>
+    Número de vocales: {{ numeroVocales }}
+</p>
+
+<p>
+    Vocales: {{ vocales }}
+</p>
+
+<p>
+    Número de consonantes: {{ numeroConsonantes }}
+</p>
+
+<p>
+    Consonantes: {{ consonantes }}
+</p>
+
+<p *ngIf="esPalindromo">
+    La cadena es un palíndromo.
+</p>
+
+<p *ngIf="!esPalindromo && frase">
+    La cadena no es un palíndromo.
+</p>
