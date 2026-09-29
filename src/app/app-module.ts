@@ -8,9 +8,10 @@ import { Usuarios } from './3_ejercicios/usuarios/usuarios';
 import { Palindromos } from './3_ejercicios/palindromos/palindromos';
 import { FormsModule } from '@angular/forms';
 import { Distancias } from './formulario/distancias/distancias';
+import { Cinepolis } from './cinepolis/cinepolis';
 
 @NgModule({
-  declarations: [App, HeroesList, Areas, Usuarios, Palindromos, Distancias],
+  declarations: [App, HeroesList, Areas, Usuarios, Palindromos, Distancias, Cinepolis],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

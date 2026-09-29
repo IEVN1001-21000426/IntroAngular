@@ -1,0 +1,220 @@
+<div style="
+  min-height: 100vh;
+  background-image: url('/cinepolis.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px;
+  box-sizing: border-box;
+  color: white;
+  font-family: Arial, sans-serif;
+">
+
+  <h1 style="
+    text-align: center;
+    margin-top: 0;
+  ">
+    Cinépolis
+  </h1>
+
+  <div style="
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  ">
+
+
+    <fieldset style="
+      width: 45%;
+      padding: 20px;
+      border: 2px solid white;
+    ">
+
+      <legend style="
+        font-size: 25px;
+        font-weight: bold;
+      ">
+        Entradas
+      </legend>
+
+      <div style="margin-bottom: 15px;">
+
+        <label style="
+          display: inline-block;
+          width: 200px;
+        ">
+          Nombre:
+        </label>
+
+        <input
+          type="text"
+          [(ngModel)]="nombre"
+          style="
+            width: 180px;
+            padding: 5px;
+          ">
+
+      </div>
+
+      <div style="margin-bottom: 15px;">
+
+        <label style="
+          display: inline-block;
+          width: 200px;
+        ">
+          Cantidad Compradores:
+        </label>
+
+        <input
+          type="number"
+          [(ngModel)]="cantidadCompradores"
+          min="1"
+          style="
+            width: 180px;
+            padding: 5px;
+          ">
+
+      </div>
+
+      <div style="margin-bottom: 15px;">
+
+        <label style="
+          display: inline-block;
+          width: 200px;
+        ">
+          Tarjeta Cineco:
+        </label>
+
+        <input
+          type="radio"
+          name="cineco"
+          value="sí"
+          [(ngModel)]="tarjetaCineco">
+
+        <label>Sí</label>
+
+
+        <input
+          type="radio"
+          name="cineco"
+          value="no"
+          [(ngModel)]="tarjetaCineco"
+          style="margin-left: 20px;">
+
+        <label>No</label>
+
+      </div>
+
+      <div>
+
+        <label style="
+          display: inline-block;
+          width: 200px;
+        ">
+          Cantidad de Boletos:
+        </label>
+
+        <input
+          type="number"
+          [(ngModel)]="cantidadBoletos"
+          min="1"
+          style="
+            width: 180px;
+            padding: 5px;
+          ">
+
+      </div>
+
+    </fieldset>
+
+    <fieldset style="
+      width: 35%;
+      padding: 20px;
+      border: 2px solid white;
+    ">
+
+      <legend style="
+        font-size: 25px;
+        font-weight: bold;
+      ">
+        Salidas
+      </legend>
+
+
+      <div style="margin: 20px 0;">
+
+        <label style="
+          display: inline-block;
+          width: 130px;
+        ">
+          Valor a Pagar:
+        </label>
+
+        <input
+          type="text"
+          [value]="valorPagar"
+          readonly
+          style="
+            width: 150px;
+            padding: 5px;
+          ">
+
+      </div>
+ <div style="
+    text-align: center;
+    margin-top: 25px;
+  ">
+
+    <p style="
+      font-size: 18px;
+      font-weight: bold;
+    ">
+      {{ mensaje }}
+    </p>
+
+  </div>
+    </fieldset>
+
+  </div>
+
+ 
+
+  <fieldset style="
+    width: 300px;
+    margin: 300px auto 0 auto;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid white;
+  ">
+
+    <legend style="
+      font-size: 25px;
+      font-weight: bold;
+    ">
+      Acciones
+    </legend>
+
+    <button
+      (click)="procesar()"
+      style="
+        padding: 10px 20px;
+        margin-right: 20px;
+        cursor: pointer;
+      ">
+      Procesar
+    </button>
+
+    <button
+      (click)="salir()"
+      style="
+        padding: 10px 20px;
+        cursor: pointer;  
+      ">
+      Salir
+    </button>
+    
+
+  </fieldset>
+
+</div>
